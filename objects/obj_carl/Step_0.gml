@@ -1,14 +1,17 @@
 /// @description Main code for Carl
-
+//if (!currplayer)
+//{
+//	exit;	
+//}
 // If Carl is not active then don't allow player to move him
-if (currplayer)
-{
-	if (keyboard_check_pressed(vk_tab))
-	{
+if (currplayer){
+	if (keyboard_check_pressed(vk_tab)){
 		currplayer = false;
 		obj_leroy.currplayer = true;
-	
+		keyboard_clear(vk_tab);
+		
 	}
+
 	// right/left movement
 	key_left = keyboard_check(ord("A"));
 	key_right = keyboard_check(ord("D"));
@@ -59,3 +62,4 @@ else
 // actual character movements
 y = y + vsp;
 x = x + hsp;
+
