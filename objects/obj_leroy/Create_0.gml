@@ -32,3 +32,6 @@ upgrv = -1.5
 
 // current vertical speed
 vsp = 0;
+
+//condition if carl and leroy are joined
+together = false;

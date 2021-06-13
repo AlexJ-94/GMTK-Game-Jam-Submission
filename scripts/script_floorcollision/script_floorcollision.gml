@@ -8,11 +8,17 @@ function script_floorcollision(){
 			y = y + sign(vsp);
 		}
 		vsp = 0;
-		obj_carl.grounded = true;
+		if(instance_exists(obj_carl))
+		{
+			obj_carl.grounded = true;
+		}
 	}
 	else
 	{
-		obj_carl.grounded = false;	
+		if(instance_exists(obj_carl))
+		{
+			obj_carl.grounded = false;
+		}
 	}
 
 }

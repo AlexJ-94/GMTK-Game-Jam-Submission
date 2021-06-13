@@ -9,6 +9,8 @@ if (currplayer){
 		currplayer = false;
 		obj_leroy.currplayer = true;
 		keyboard_clear(vk_tab);
+		hsp = 0;
+		vsp = 0;
 		
 	}
 
@@ -27,17 +29,15 @@ if (currplayer){
 	// this allows quick/floaty jumps
 	if (goingup)
 	{
-		if (vsp >= 0)
-		{
+		if (vsp >= 0){
 			grv = bgrv;	
 			goingup = false;	
 		}
-		else {
+		else{
 			grv = upgrv;
 		}
 	}
-	else
-	{
+	else{
 		grv = bgrv;	
 	}
 }
@@ -47,16 +47,14 @@ vsp = vsp - grv;
 script_floorcollision();
 
 // animations
-if (hsp == 0 and grounded == 1)
-{
-	image_speed = 0;
+if (hsp == 0 and grounded == 1){
+	sprite_index = spr_carl_stand;
 }
-else
-{
+else{
 	if (hsp != 0) {
 		image_xscale = sign(hsp);
 	}
-	image_speed = 1;	
+	sprite_index = spr_carl_swim;	
 }
 
 // actual character movements
